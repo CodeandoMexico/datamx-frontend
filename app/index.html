@@ -2,7 +2,7 @@
 <html class="no-js">
   <head>
     <meta charset="utf-8">
-    <title>datamx frontend</title>
+    <title>Datamx frontend</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="shortcut icon" href="/favicon.ico">
@@ -13,6 +13,7 @@
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/datamx.css">
     <!-- endbuild -->
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="bower_components/modernizr/modernizr.js"></script>
@@ -25,23 +26,224 @@
     <![endif]-->
 
 
-    <div class="container">
+    <div class="container-fluid separated-bottom">
       <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="#">Home</a></li>
-        </ul>
-        <h3 class="text-muted">datamx frontend</h3>
+        <nav class="navbar navbar-codeando">
+          <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="#"><img class="logo" src="/images/cmx-logo.png"> </a>
+          </div>
+              <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+        </nav>
       </div>
 
       <div class="jumbotron">
-        <h1>'Allo, 'Allo!</h1>
-        <p class="lead">Always a pleasure scaffolding your apps.</p>
-        <p><a class="btn btn-lg btn-success" href="#">Splendid! <span class="glyphicon glyphicon-ok"></span></a></p>
+        <h2>Datos abiertos de ciudadanos para ciudadanos</h2>
+        <p class="lead">Encuentra datos públicos de  sociedad civil, empresas,<br/>gobiernos y academia en un solo lugar.</p>
+        <p class=""><a class="blue" href="#"><img class="play-icon" src="/images/playvideo@2x.png"></img> Ver video</a></p>
+        <div class="row">
+          <div class="separated col-md-5 col-md-offset-1">
+            <img class="mini-separated" src="/images/publica.svg">
+           <p class="mini-separated">Entiendo como coladorar<br/> publicando datos</p>
+            <button class="btn large">Publica datos</button>
+          </div>
+          <div class="separator separated col-md-5">
+            <img class="mini-separated" src="/images/usa.svg">
+            <p class="mini-separated">Descubre como usar<br/>datos abiertos</p>
+            <button class="btn large">Usa datos</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid container-white separated">
+      <div class="">
+      <div class="row">
+        <div class="col-xs-10 col-xs-offset-1 center-text">
+
+          <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators separated-top">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active">
+
+    </li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+        <h2>De la brigada DF</h1>
+          <p class="lead separated-bottom">Conoce los indicadores de pobreza en México</p>
+      <img src="http://codeforbtv.org/img/events/national-day-of-civic-hacking-2014-780x320.jpg" alt="...">
+      <div class="carousel-caption">
+        ...
+      </div>
+    </div>
+    <div class="item">
+        <h2>De la brigada DF</h1>
+          <p class="lead separated-bottom">Conoce los indicadores de pobreza en México</p>
+      <img src="http://codeforbtv.org/img/events/design-workshop-780x320.jpg" alt="...">
+    </div>
+    ...
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <img src="/images/flechaizq.svg"  class="glyphicon glyphicon-chevron-left" aria-hidden="true"></img>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <img src="/images/flechader.svg" class="glyphicon glyphicon-chevron-right" aria-hidden="true"></img>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+        </div>
+        </div>
       </div>
 
-      <div class="footer">
+    </div>
+    <div class="container-fluid container-blue separated">
+        <div class="row">
+          <div class="col-xs-10 col-xs-offset-1 center-text separated">
+            <h3 class="white">Explora las distintas categorias de <span class="blue">datos abiertos</span></h3>
+            <p class="separated-bottom">dummy text, más copy aquí abajo</p>
+            
+            <div class="row separated-bottom">
+              <ul class="list-inline">
+                <li class="thumbnail">
+                  <img src="/images/iconoengrane.svg"></img>
+                  <div class="caption">
+                    <button class="btn btn-white medium">Administración</button>
+                  </div>
+                </li>
+                <li class="thumbnail">
+                  <img src="/images/iconobirrete.svg"></img>
+                  <div class="caption">
+                    <button class="btn btn-white medium">Educación</button>
+                  </div>
+                </li>
+                <li class="thumbnail">
+                  <img src="/images/iconomaletin.svg"></img>
+                  <div class="caption">
+                    <button class="btn btn-white medium">Empleo</button>
+                  </div>
+                </li>
+                <li class="thumbnail">
+                  <img src="/images/iconocartera.svg"></img>
+                  <div class="caption">
+                    <button class="btn btn-white medium">Presupuestos</button>
+                  </div>
+                </li>
+                <li class="thumbnail">
+                  <img src="/images/iconosalud.svg"></img>
+                  <div class="caption">
+                    <button class="btn btn-white medium">Salud</button>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <a href="#" class="blue">Ver todos los datos  ></a>
+          </div>
       </div>
+    </div>
 
+  <div class="container-fluid container-white separated">
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1 center-text separated">
+        <h3 class="blue">Datos abiertos populares</h3>
+        <p class="separed-bottom">Explora los  datos que están siendo más utilizados por la comunidad</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container-fluid separated">
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1 center-text separated-top">
+        <p class="white">Súmate a la comunidad de datos abiertos de México</p>
+        <form>
+          <div class="input-group-lg separated-bottom">
+            <input type="email" class="email" placeholder="Correo electrónico" name="email"/>
+            <button class="btn tick"><img src="/images/tick.svg"></img></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+    <div class="footer container-fluid container-white separated-top separated-bottom">
+      <div class="separation separated-bottom">
+        <div class="row">
+          <div class="col-xs-offset-1 col-xs-4 logo"><img src="http://datamx.io/logo_cmx.png"></img></div>
+          <ul class="footer-menu col-xs-6">
+            <li><ul class="">
+              <li class="footer-menu-head">Datos</li>
+              <li class="">Organizaciones</li>
+              <li>Categorías</li>
+            </ul></li>
+            <li><ul>
+              <li class="footer-menu-head">Desarrolladores</li>
+              <li>APIs</li>
+              <li>Estándares</li>
+            </ul></li>
+            <li><ul>
+              <li class="footer-menu-head">Participa</li>
+              <li>Abre datos</li>
+              <li>Utiliza datos</li>
+              <li>Aprende</li>
+              <li>Comunidad</li>
+              <li>Centro de Apertura</li>
+            </ul></li>
+            <li><ul>
+              <li class="footer-menu-head">Acerca</li>
+              <li>¿Qué es?</li>
+              <li>FAQ</li>
+              <li>Blog</li>
+            </ul></li>
+            <li class="gt"><ul>
+              <li><img src="/images/github.svg"></img></li>
+              <li><img src="/images/twitter.svg"></img></li>
+              </ul>
+            </li>
+        </ul></div>
+      </div>
     </div>
 
 
@@ -62,7 +264,7 @@
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
-
+    <script src="scripts/live.js"></script>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
       (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
