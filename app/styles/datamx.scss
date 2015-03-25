@@ -1,16 +1,80 @@
-// Colors
-$codeando-light: #2F9DE6;
-$codeando-dark: #283858;
+@import 'colors';
+@import 'buttons';
+@import 'boxes';
 
-$codeando-yellow: #FFB112;
-$codeando-grey: #7B7B7B;
-
-// Fonts
-$font-stack: Helvetica, sans-serif;
 
 // Sizes
 
 $container-base-separation: 3em;
+
+
+// Titles
+
+h1, h2 {
+    color: $codeando-light  !important;
+}
+
+.jumbotron  {
+    background-color: transparent;
+}
+
+// containers
+
+.container, .container-fluid {
+    &.container-blue {
+      background-color: $codeando-dark;
+      color: white;    
+    }
+    
+    &.container-white {
+      background-color: white;
+      color: black;
+    }
+    
+    &.separated {
+      @extend .separated;
+    }
+    
+    &.separated-top {
+      @extend .separated-top;
+    }
+    
+    &.separated-bottom {
+      @extend .separated-bottom;
+    }
+}
+
+// Separation
+
+@mixin separated-top($separation: $container-base-separation) {
+    padding-top: $separation;
+}
+
+@mixin separated-bottom($separation: $container-base-separation) {
+    padding-bottom: $separation;
+}
+
+@mixin separated($separation: $container-base-separation) {
+    @include separated-top($separation);
+    @include separated-bottom($separation);
+}
+
+.separated { @include separated; }
+
+.separated-top { @include separated-top; }
+
+.separated-bottom { @include separated-bottom; }
+
+
+.mini-separated {
+  padding-top: $container-base-separation/4;
+  padding-bottom: $container-base-separation/4;
+}
+
+.center-text {
+    text-align: center;
+}
+
 
 body {
     background-color: $codeando-dark;
@@ -23,28 +87,24 @@ body {
 // Navbar
 
 .brand {
-    //padding: 15px 83px;
     max-width: 12.35em;
     float: left;
     display: block;
-    // padding: 10px 1.25em 10px;
-    //font-size: 1.5em;
-    //font-weight: 200;
     color: #777777;
     text-shadow: 0 1px 0 #ffffff;
     vertical-align: middle;
     
-   .logo {
-      max-width: 100%;
-      width: auto\9;
-      height: auto;
-      vertical-align: middle;
-      border: 0;
-   }
+  .logo {
+    max-width: 100%;
+    width: auto\9;
+    height: auto;
+    vertical-align: middle;
+    border: 0;
+  }
 }
 
 .navbar-toggle {
-    vertical-align: middle;
+  vertical-align: middle;
   background-color: transparent;
   border-color: $codeando-light;
   
@@ -82,6 +142,8 @@ body {
     }
 }
 
+// 
+
 .header, .jumbotron {
     border-bottom: none; // remove bar
     p {
@@ -90,9 +152,6 @@ body {
     .lead {
       font-size: 16px;
     }
-}
-.footer {
-    border-top: none;
 }
 
 p {
@@ -112,124 +171,19 @@ p {
     width: 45px;
 }
 
-// Titles
+// specific
 
-h1, h2 {
-    color: $codeando-light  !important;
+@media (min-width: 800px) {
+  .separator {
+    border-left: 1px solid darken($codeando-dark, 5%);
+  }
 }
 
-.jumbotron  {
+.thumbnail {
+    border-color: transparent;
     background-color: transparent;
 }
 
-.btn {
-    font: $font-stack;
-    // font-weight: bold;
-    background-color: transparent;
-    border-radius: 50px;
-    border-color: $codeando-light;
-    border-width: 2px;
-    color: $codeando-light;
-    
-    &:hover, &:focus {
-        background-color: $codeando-light;
-        color: white;
-        border-color: $codeando-light;
-    }
-    
-    &.medium {
-        width: 120px; 
-    }
-    
-    &.large {
-        width: 180px;
-        // padding: 14px 52px;
-    }
-}
-
-.btn-warning, .btn-yellow {
-    font: $font-stack;
-    background-color: transparent;
-    border-radius: 50px;
-    border-color: $codeando-yellow;
-    color: $codeando-yellow;
-    
-    &:hover, &:focus {
-        background-color: $codeando-yellow;
-        border-color: lighten($codeando-yellow, 5%);
-    }
-}
-
-.btn-white {
-    font: $font-stack;
-    background-color: transparent;
-    border-radius: 50px;
-    border-color: white;
-    color: white;
-    
-    &:hover {
-        background-color: transparent;
-        border-color: $codeando-light;
-        color: white;
-    }
-}
-
-.btn-grey {
-    font: $font-stack;
-    background-color: transparent;
-    border-radius: 50px;
-    border-color: $codeando-grey;
-    color: $codeando-grey;
-    
-    &:hover {
-        background-color: $codeando-grey;
-        border-color: $codeando-grey;
-        color: white;
-    }
-}
-
-.container, .container-fluid {
-    &.container-blue {
-      background-color: $codeando-dark;
-      color: white;    
-    }
-    
-    &.container-white {
-      background-color: white;
-      color: black;
-    }
-    
-    &.separated {
-      padding-top: $container-base-separation;
-      padding-bottom: $container-base-separation;
-    }
-    
-    &.separated-top {
-      padding-top: $container-base-separation;    
-    }
-    
-    &.separated-bottom {
-      padding-bottom: $container-base-separation;
-    }
-}
-
-.separated, .separated-top {
-  padding-top: $container-base-separation;
-  // padding-bottom: $container-base-separation;
-}
-
-.separated-bottom {
-  padding-bottom: $container-base-separation;
-}
-
-.mini-separated {
-  padding-top: $container-base-separation/4;
-  padding-bottom: $container-base-separation/4;
-}
-
-.center-text {
-    text-align: center;
-}
 
 // carousel 
 .carousel-control {
@@ -258,18 +212,7 @@ h1, h2 {
     color: white !important;
 }
 
-// specific
-
-@media (min-width: 800px) {
-  .separator {
-    border-left: 1px solid darken($codeando-dark, 5%);
-  }
-}
-
-.thumbnail {
-    border-color: transparent;
-    background-color: transparent;
-}
+// Suscription
 
 .tick {
     &:hover {
@@ -293,7 +236,10 @@ h1, h2 {
     border-style:solid;
 }
 
+// Footer
+
 .footer {
+    border-top: none;
     background-color: #F6F6F6;
 }
 
@@ -332,22 +278,35 @@ h1, h2 {
     .footer {
         margin: 0 auto;
         
-        .logo>img {
+        .logo  {
+            width: 100%;
+            margin-left: 0px;
+            text-align: center;
+            
+            &>img {
             width: 200px;
-            margin-left: 60px;
+            //margin-left: 60px;
+            margin: 0 auto;
+          }
         }
     }
     
     .footer-menu {
         clear: both;
         width: 100%;
-        float: none;
+        // float: none;
         width: 100%;
         display: block !important;
+        // position: absolute;
+        
         
         &>li {
           margin: 10px auto;
           display: block;
+          
+          &>ul {
+              padding-left: 0px;
+          }
           
           ul>li {
               display: block;
@@ -360,5 +319,9 @@ h1, h2 {
               margin-top: 15px;
           }
         }
+    }
+    
+    .dataset {
+        margin: 30px 0px;
     }
 }
