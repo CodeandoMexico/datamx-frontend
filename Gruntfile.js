@@ -188,7 +188,7 @@ module.exports = function (grunt) {
             expand: true,
             dest: '<%= config.app %>',
             cwd: '<%= config.app %>/templates',
-            src: '*',
+            src: '*.html',
             config: {
                 baseDir: '<%= config.app %>/templates'
             }
