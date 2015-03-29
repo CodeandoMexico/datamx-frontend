@@ -1,0 +1,56 @@
+@import 'colors';
+
+.dataset {
+    border: 2px solid #F0EFEF;
+    border-radius: 10px;
+    padding: 18px;
+    text-align: left;
+    width: 280px;
+    height: 210px;
+    margin: 20px 30px;
+    position: relative;
+    display: inline-table;
+    list-style-type: none;
+    
+   p {
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+    
+    h4 {
+        height: 30px;
+        font-size: 16px;
+        color: $codeando-light;
+        text-align: left;
+        margin-bottom: 10px;
+    }
+    
+    .engrane {
+        width: 25px;
+        height: 25px;
+    }
+    
+    .btn {
+        height: 25px;
+        border-radius: 15px;
+        margin: 2px 2px;
+        font-size: 12px;
+        padding: 2px 6px;
+        
+    }
+    
+    .buttons-container {
+        position: absolute;
+        bottom: 15px;
+        max-width: 200px;
+    }
+}
+
+.dataset-container {
+    margin: 0 auto;
+    text-align: center;
+    
+    ul {
+        padding: 20px 0px;
+    }
+}
