@@ -1,7 +1,7 @@
 @import 'colors';
 @import 'buttons';
 @import 'boxes';
-
+@import 'carousel';
 
 // Sizes
 
@@ -23,22 +23,22 @@ h1, h2 {
 .container, .container-fluid {
     &.container-blue {
       background-color: $codeando-dark;
-      color: white;    
+      color: white;
     }
-    
+
     &.container-white {
       background-color: white;
       color: black;
     }
-    
+
     &.separated {
       @extend .separated;
     }
-    
+
     &.separated-top {
       @extend .separated-top;
     }
-    
+
     &.separated-bottom {
       @extend .separated-bottom;
     }
@@ -93,7 +93,7 @@ body {
     color: #777777;
     text-shadow: 0 1px 0 #ffffff;
     vertical-align: middle;
-    
+
   .logo {
     max-width: 100%;
     width: auto\9;
@@ -107,9 +107,9 @@ body {
   vertical-align: middle;
   background-color: transparent;
   border-color: $codeando-light;
-  
+
   color: white;
-  
+
   span {
       background-color: $codeando-light;
   }
@@ -124,8 +124,8 @@ body {
 
 .navbar-collapse {
     li {
-        
-     a { 
+
+     a {
           color: white;
         &:hover, &:focus,  {
           background: $codeando-light;
@@ -133,7 +133,7 @@ body {
           color: white;
         }
       }
-      
+
       &:hover {
           background: transparent;
           border-color: $codeando-light;
@@ -142,7 +142,7 @@ body {
     }
 }
 
-// 
+//
 
 .header, .jumbotron {
     border-bottom: none; // remove bar
@@ -177,6 +177,12 @@ p {
   .separator {
     border-left: 1px solid darken($codeando-dark, 5%);
   }
+
+  @each $name, $color in (grey: $codeando-grey, blue: $codeando-light)  {
+    .separator-#{$name} {
+      border-left: 1px solid rgba($color, 0.3);
+    }
+  }
 }
 
 .thumbnail {
@@ -184,18 +190,21 @@ p {
     background-color: transparent;
 }
 
+.glyphicon-chevron-right-after:after {
+  content: "\e080";
+}
 
-// carousel 
+// carousel
 .carousel-control {
     &.left, &.right {
       background-image: none;
-      
+
     }
-    
+
     &.left {
         left: -2em;
     }
-    
+
     &.right {
         right: -2em;
     }
@@ -206,7 +215,7 @@ p {
 }
 
 .blue {
-    color: $codeando-light !important ; 
+    color: $codeando-light !important ;
 }
 .white {
     color: white !important;
@@ -247,8 +256,8 @@ p {
     list-style: none;
     display: inline-block;
     font-size: 12px;
-    
-    
+
+
     &>li{
         list-style: none;
         vertical-align: top;
@@ -256,16 +265,16 @@ p {
         margin: 10px 1.5px;
        // margin-right: 1.5px;
         //margin-top: 10px;
-        
+
         .footer-menu-head {
             font-weight: bold;
         }
-        
+
         ul>li {
-           list-style: none; 
+           list-style: none;
         }
     }
-    
+
     .gt {
        img {
            margin-top: 5px;
@@ -277,12 +286,12 @@ p {
 @media(max-width:  700px){
     .footer {
         margin: 0 auto;
-        
+
         .logo  {
             width: 100%;
             margin-left: 0px;
             text-align: center;
-            
+
             &>img {
             width: 200px;
             //margin-left: 60px;
@@ -290,7 +299,7 @@ p {
           }
         }
     }
-    
+
     .footer-menu {
         clear: both;
         width: 100%;
@@ -298,29 +307,29 @@ p {
         width: 100%;
         display: block !important;
         // position: absolute;
-        
-        
+
+
         &>li {
           margin: 10px auto;
           display: block;
-          
+
           &>ul {
               padding-left: 0px;
           }
-          
+
           ul>li {
               display: block;
               text-align: center;
               margin: 0 auto;
           }
-          
+
           ul>li>img {
               width: 30px;
               margin-top: 15px;
           }
         }
     }
-    
+
     .dataset {
         margin: 30px 0px;
     }
