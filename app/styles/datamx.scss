@@ -173,6 +173,12 @@ p {
 
 // specific
 
+.item-separator {
+  text-align: center;
+  width: 48%;
+  display: inline-block;
+}
+
 @media (min-width: 800px) {
   .separator {
     border-left: 1px solid darken($codeando-dark, 5%);
@@ -182,6 +188,17 @@ p {
     .separator-#{$name} {
       border-left: 1px solid rgba($color, 0.3);
     }
+  }
+
+  .bar {
+    height:3px;
+    background:#eee;
+    width:70%;
+    position:relative;
+    top:-32px;
+    margin: 0 auto;
+
+    //left:0;
   }
 }
 

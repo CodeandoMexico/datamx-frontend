@@ -1,71 +1,111 @@
-.carousel-indicators.timeline {
-  position: relative;
-  left: 0px;
-  margin: 0 auto;
+@import 'colors';
 
-  &>li {
-    display: inline-block;
-    padding-left: 20px;
-    padding-right: 20px;
-    text-indent: 0px;
-    width: 120px;
-  }
 
-  &>li.active {
-
-  }
-
-  &>li:after {
-    content: '';
-    display: block;
-    background: #eee;
-    width: 7px;
-    height: 7px;
-    border-radius: 6px;
-    border: 3px solid #06182E;
+@media (min-width: 800px) {
+.carousel {
+  .carousel-indicators.timeline {
     position: relative;
-    left: 50%;
-    top: -60px;
-    margin-left: -6px;
-  }
-}
+    left: 0px;
+    margin: 0 auto;
+    width: 100%;
 
-.control {
-  margin: 0 auto;
-  margin-top: 20px;
-
-  font-size: 12px;
-
-  li {
-    display: inline-block;
-    list-style: none;
-  }
-  a {
-    font-size: 12px;
-  }
-}
-
-.carousel-control {
-
-   &.step {
-     top: inherit;
-     bottom: inherit;
-     left: inherit;
-     position: relative;
-
-
-
-    span {
-       font-size: 12px;
+    &>li {
+      display: inline-block;
+      padding-left: 10px;
+      padding-right: 10px;
+      text-indent: 0px;
+      width: 17%;
     }
 
-     &.left {
+    &>li.active {
+      &:after {
+        background: $codeando-light;
+        border: 3px solid $codeando-light;
+      }
+    }
 
-     }
+    &>li:after {
+      content: '';
+      display: block;
+      background: #eee;
+      width: 12px;
+      height: 12px;
+      border-radius: 6px;
+      border: 3px solid #eee;
+      position: relative;
+      left: 50%;
+      top: -60px;
+      margin-left: -6px;
+    }
+  }
 
-     &.right {
+  .carousel-control.step {
+      top: inherit;
+      bottom: inherit;
+      left: inherit;
+      position: relative;
 
-     }
-   }
+      span {
+        font-size: 12px;
+      }
 
+      &.left {
+        width: 80px;
+        height: 12px;
+        display: inline-block;
+        top: 11px;
+        span {
+          width: 80px;
+          height: 12px;
+          color: $codeando-light;
+          &:before { color: black;}
+        }
+      }
+
+      &.right {
+        span {
+          color: $codeando-light;
+          &:after { color: black; }
+        }
+      }
+    }
+}}
+
+
+@media (max-width: 799px) {
+  .carousel-indicators.timeline {
+    position: relative;
+    left: 0px;
+    margin: 0 auto;
+    width: 100%;
+
+    &>li {
+      display: inline-block;
+      padding-left: 20px;
+      padding-right: 20px;
+      text-indent: 0px;
+      display: none;
+    }
+
+    &>li.active {
+      display: block;
+      text-align: center;
+      width: 100%;
+      font-size: 18px;
+      color: $codeando-dark;
+      font-weight: bold;
+    }
+  }
+
+  .glyphicon-chevron-right-after {
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+    display: inline-block;
+    content: "";
+    right: 50%;
+    margin-right: -10px;
+  }
+
+  .glyphicon-chevron-right { content: "";}
 }

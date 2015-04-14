@@ -68,7 +68,7 @@ module.exports = function (grunt) {
       },
       nunjucks_render: {
           files: ['<%= config.app %>/templates/{,*/}.html'],
-          tasks: ['nunjucks_render:files']
+          tasks: ['nunjucks_render']
       }
     },
 
