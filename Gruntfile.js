@@ -126,7 +126,15 @@ module.exports = function (grunt) {
           ]
         }]
       },
-      server: '.tmp'
+      server: {
+        files: [{
+          dot: true,
+          src: [
+            '.tmp',
+            '<%= config.app %>/*.html'
+          ]
+        }]
+      }
     },
 
     // Make sure code styles are up to par and there are no obvious mistakes
