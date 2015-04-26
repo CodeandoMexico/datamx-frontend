@@ -1,0 +1,59 @@
+{% extends "partials/skeleton" %}
+
+{% block content %}
+<div class="container-fluid container-white separated-bottom center-text">
+    <div class="row">
+      <div class="separated col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
+    <h2>Usa datos</h2>
+    <p class="mini-separated">Los <a class="blue">datos abiertos</a> son la materia prima de la tecnología cívica. El conector que
+  permite potencializar el poder de las comunidades aportando en nuestras sociedades. La tecnología cívica
+  permite que los ciudadanos  se relacionen  y colaboren de maneras nuevas e innocadoras.</p>
+  </div>
+</div>
+
+
+<div class="container-fluid container-white separated">
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2 center-text">
+        <div  id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+          <div class="bar"></div>
+
+          <!-- Indicators -->
+          <ol id="carousel-example-generic" class="carousel-indicators timeline separated-bottom" >
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active">Crea tu usuario</li>
+            <li data-target="#carousel-example-generic" data-slide-to="1">Crea tu orgaización</li>
+            <li data-target="#carousel-example-generic" data-slide-to="2">Empieza a subir datos</li>
+            <li data-target="#carousel-example-generic" data-slide-to="3">Lee los estandares</li>
+            <li data-target="#carousel-example-generic" data-slide-to="4">Promueve los datos</li>
+          </ol>
+
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="http://codeforbtv.org/img/events/national-day-of-civic-hacking-2014-780x320.jpg" alt="...">
+                <div class="carousel-caption">
+                  ...
+                </div>
+            </div>
+            <div class="item">
+                <img src="http://codeforbtv.org/img/events/design-workshop-780x320.jpg" alt="...">
+                <div class="carousel-caption">
+                    ...
+                </div>
+            </div>
+          </div>
+
+
+          <!-- Controls -->
+          <a class="left carousel-control step" href="#carousel-example-generic" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"> Anterior </span>
+          </a>
+          <a class="right carousel-control  step" href="#carousel-example-generic" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right-after"> Siguiente </span>
+          </a>
+          <!-- end control -->
+        </div>
+      </div>
+    </div>
+</div>
+{% endblock %}
