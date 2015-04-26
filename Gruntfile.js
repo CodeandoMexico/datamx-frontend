@@ -65,6 +65,10 @@ module.exports = function (grunt) {
           '.tmp/styles/{,*/}*.css',
           '<%= config.app %>/images/{,*/}*'
         ]
+      },
+      nunjucks_render: {
+          files: ['<%= config.app %>/templates/{,*/}*.html'],
+          tasks: ['nunjucks_render:server']
       }
     },
 
@@ -122,7 +126,15 @@ module.exports = function (grunt) {
           ]
         }]
       },
-      server: '.tmp'
+      server: {
+        files: [{
+          dot: true,
+          src: [
+            '.tmp',
+            '<%= config.app %>/*.html'
+          ]
+        }]
+      }
     },
 
     // Make sure code styles are up to par and there are no obvious mistakes
@@ -172,6 +184,37 @@ module.exports = function (grunt) {
           ext: '.css'
         }]
       }
+    },
+    nunjucks_render: {
+        options: {
+            extensions: '.html',
+            watch: true,
+            baseDir: '<%= config.app %>/templates',
+        },
+        dist: {
+          files: [{
+            nonull: true,
+            expand: true,
+            dest: '<%= config.dist %>',
+            cwd: '<%= config.app %>/templates',
+            src: '*.html',
+            config: {
+              baseDir: '<%= config.app %>/templates'
+            }
+          }]
+        },
+        server: {
+            files: [{
+              nonull: true,
+              expand: true,
+              dest: '<%= config.app %>',
+              cwd: '<%= config.app %>/templates',
+              src: '*.html',
+              config: {
+                  baseDir: '<%= config.app %>/templates'
+              }
+            }]
+          }
     },
 
     // Add vendor prefixed styles
@@ -380,8 +423,10 @@ module.exports = function (grunt) {
     }
   });
 
+    grunt.loadNpmTasks('grunt-nunjucks-render');
 
-  grunt.registerTask('serve', 'start the server and preview your app, --allow-remote for remote access', function (target) {
+
+    grunt.registerTask('serve', 'start the server and preview your app, --allow-remote for remote access', function (target) {
     if (grunt.option('allow-remote')) {
       grunt.config.set('connect.options.hostname', '0.0.0.0');
     }
@@ -391,6 +436,7 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'clean:server',
+      'nunjucks_render',
       'wiredep',
       'concurrent:server',
       'autoprefixer',
@@ -421,6 +467,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
+    'nunjucks_render',
     'wiredep',
     'useminPrepare',
     'concurrent:dist',
