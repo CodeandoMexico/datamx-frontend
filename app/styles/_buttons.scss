@@ -1,7 +1,6 @@
 @mixin generate-color-buttons($class, $color) {
     .#{$class} {
         font: $font-stack;
-    // font-weight: bold;
         background-color: transparent;
         border-color: $color;
         color: $color;
@@ -22,7 +21,6 @@
 
 .btn {
     font: $font-stack;
-    // font-weight: bold;
     background-color: transparent;
     border-radius: 50px;
     border-color: $codeando-light;
@@ -47,7 +45,6 @@
     
     &.large {
         width: 180px;
-        // padding: 14px 52px;
     }
 }
 
