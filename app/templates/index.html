@@ -1,68 +1,7 @@
-<!doctype html>
-<html class="no-js">
-  <head>
-    <meta charset="utf-8">
-    <title>Datamx frontend</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <link rel="shortcut icon" href="/favicon.ico">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(.) styles/vendor.css -->
-    <!-- bower:css -->
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/datamx.css">
-    <!-- endbuild -->
-    <!-- build:js scripts/vendor/modernizr.js -->
-    <script src="bower_components/modernizr/modernizr.js"></script>
-    <!-- endbuild -->
+{% extends "partials/skeleton" %}
 
-  </head>
-  <body>
-    <!--[if lt IE 10]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-
-
-    <div class="container-fluid separated-bottom">
-      <div class="header">
-        <nav class="navbar navbar-codeando">
-          <div class="container-fluid">
-          <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="brand" href="#"><img class="logo" src="/images/cmx-logo.png"> </a>
-          </div>
-              <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Datos</a></li>
-        <li><a href="">Organizaciones</a></li>
-        <li><a href="">Desarrolladores</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Participa<span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Usa datos</a></li>
-            <li><a href="#">Publica datos</a></li>
-            <li><a href="#">Aprende datos abiertos</a></li>
-            <li><a href="#">Comunidad</a></li>
-            <li><a href="#">Apertura de datos</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-        </nav>
-      </div>
-
+{% block content %}
+    <div class="container-fluid container-blue separated-bottom">
       <div class="jumbotron">
         <h2>Datos abiertos de ciudadanos para ciudadanos</h2>
         <p class="lead">Encuentra datos públicos de  sociedad civil, empresas,<br/>gobiernos y academia en un solo lugar.</p>
@@ -135,7 +74,7 @@
           <div class="col-xs-10 col-xs-offset-1 center-text separated">
             <h3 class="white">Explora las distintas categorias de <span class="blue">datos abiertos</span></h3>
             <p class="separated-bottom">dummy text, más copy aquí abajo</p>
-
+            
             <div class="row separated-bottom">
               <ul class="list-inline">
                 <li class="thumbnail">
@@ -175,7 +114,7 @@
       </div>
     </div>
 
-  <div class="container-fluid container-white separated">
+    <div class="container-fluid container-white separated">
     <div class="row">
       <div class="col-xs-10 col-xs-offset-1 center-text separated">
         <h3 class="blue">Datos abiertos populares</h3>
@@ -194,6 +133,7 @@
               <a class="btn xmls">xmls</a>
               <a class="btn csv">csv</a>
               <a class="btn pdf">pdf</a>
+             <!--img class="engrane" src="/images/iconoengrane.svg"></img-->
             </div>
             </li>
             <li class="dataset">
@@ -208,8 +148,8 @@
       </div>
     </div>
   </div>
-
-  <div class="container-fluid separated">
+  
+    <div class="container-fluid separated">
     <div class="row">
       <div class="col-xs-10 col-xs-offset-1 center-text separated-top">
         <p class="white">Súmate a la comunidad de datos abiertos de México</p>
@@ -222,76 +162,4 @@
       </div>
     </div>
   </div>
-
-    <div class="footer container-fluid container-white separated-top separated-bottom">
-      <div class="separation separated-bottom">
-        <div class="row">
-          <div class="col-xs-offset-1 col-xs-4 logo"><img src="http://datamx.io/logo_cmx.png"></img></div>
-          <ul class="footer-menu col-xs-6">
-            <li><ul class="">
-              <li class="footer-menu-head">Datos</li>
-              <li class="">Organizaciones</li>
-              <li>Categorías</li>
-            </ul></li>
-            <li><ul>
-              <li class="footer-menu-head">Desarrolladores</li>
-              <li>APIs</li>
-              <li>Estándares</li>
-            </ul></li>
-            <li><ul>
-              <li class="footer-menu-head">Participa</li>
-              <li>Abre datos</li>
-              <li>Utiliza datos</li>
-              <li>Aprende</li>
-              <li>Comunidad</li>
-              <li>Centro de Apertura</li>
-            </ul></li>
-            <li><ul>
-              <li class="footer-menu-head">Acerca</li>
-              <li>¿Qué es?</li>
-              <li>FAQ</li>
-              <li>Blog</li>
-            </ul></li>
-            <li class="gt"><ul>
-              <li><img src="/images/github.svg"></img></li>
-              <li><img src="/images/twitter.svg"></img></li>
-              </ul>
-            </li>
-        </ul></div>
-      </div>
-    </div>
-
-
-    <!-- build:js(.) scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/button.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/carousel.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/modal.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tooltip.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
-    <script src="scripts/live.js"></script>
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='//www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X');ga('send','pageview');
-    </script>
-
-        <!-- build:js({app,.tmp}) scripts/main.js -->
-        <script src="scripts/main.js"></script>
-        <!-- endbuild -->
-</body>
-</html>
+{% endblock %}
