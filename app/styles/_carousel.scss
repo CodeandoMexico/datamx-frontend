@@ -38,7 +38,10 @@
       margin-left: -6px;
     }
   }
-
+  .carousel-control {
+    text-shadow: none;
+    font-size: 14px;
+  }
   .carousel-control.step {
       top: inherit;
       bottom: inherit;
@@ -46,16 +49,18 @@
       position: relative;
 
       span {
-        font-size: 12px;
+        font-size: 14px;
+        width: 100px;
       }
 
       &.left {
-        width: 80px;
         height: 12px;
         display: inline-block;
         top: 11px;
         span {
-          width: 80px;
+          margin-left: -40px;
+          margin-top: -17px;
+          width: 100px;
           height: 12px;
           color: $codeando-light;
           &:before { color: black;}
@@ -64,6 +69,7 @@
 
       &.right {
         span {
+          padding-top: 22px;
           color: $codeando-light;
           &:after { color: black; }
         }
@@ -104,7 +110,7 @@
     display: inline-block;
     content: "";
     right: 50%;
-    margin-right: -10px;
+    margin-right: -22px;
   }
 
   .glyphicon-chevron-right { content: "";}
