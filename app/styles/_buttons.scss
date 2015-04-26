@@ -1,0 +1,54 @@
+@mixin generate-color-buttons($class, $color) {
+    .#{$class} {
+        font: $font-stack;
+        background-color: transparent;
+        border-color: $color;
+        color: $color;
+
+
+        a {
+          color: $color;
+          text-decoration: none;
+        }
+
+        &:hover, &:focus, & a:hover, & a:focus {
+          background-color: $color;
+          color: white;
+          border-color: $color;
+        }
+    }
+}
+
+.btn {
+    font: $font-stack;
+    background-color: transparent;
+    border-radius: 50px;
+    border-color: $codeando-light;
+    border-width: 2px;
+    color: $codeando-light;
+
+
+    a {
+        color: $codeando-light;
+        text-decoration: none;
+    }
+
+    &:hover, &:focus, & a:hover, & a:focus {
+        background-color: $codeando-light;
+        color: white;
+        border-color: $codeando-light;
+    }
+
+    &.medium {
+        width: 120px;
+    }
+
+    &.large {
+        width: 180px;
+        // padding: 14px 52px;
+    }
+}
+
+@each $class, $color in $formats {
+  @include generate-color-buttons($class, $color);
+}

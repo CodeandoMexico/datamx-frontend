@@ -1,0 +1,16 @@
+// Fonts
+$font-stack: Helvetica, sans-serif;
+
+$codeando-light: #2F9DE6;
+$codeando-dark: #283858;
+
+$codeando-yellow: #FFB112;
+$codeando-grey: #7B7B7B;
+$codeando-green: green;
+$codeando-red: red;
+
+$formats: ( 
+  pdf: $codeando-red,
+  csv: $codeando-yellow,
+  xmls: $codeando-green
+);
