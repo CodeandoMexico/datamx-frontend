@@ -67,8 +67,8 @@ module.exports = function (grunt) {
         ]
       },
       nunjucks_render: {
-          files: ['<%= config.app %>/templates/{,*/}.html'],
-          tasks: ['nunjucks_render']
+          files: ['<%= config.app %>/templates/{,*/}*.html'],
+          tasks: ['nunjucks_render:server']
       }
     },
 
@@ -126,7 +126,15 @@ module.exports = function (grunt) {
           ]
         }]
       },
-      server: '.tmp'
+      server: {
+        files: [{
+          dot: true,
+          src: [
+            '.tmp',
+            '<%= config.app %>/*.html'
+          ]
+        }]
+      }
     },
 
     // Make sure code styles are up to par and there are no obvious mistakes
@@ -183,16 +191,30 @@ module.exports = function (grunt) {
             watch: true,
             baseDir: '<%= config.app %>/templates',
         },
-        files: {
+        dist: {
+          files: [{
             nonull: true,
             expand: true,
-            dest: '<%= config.app %>',
+            dest: '<%= config.dist %>',
             cwd: '<%= config.app %>/templates',
             src: '*.html',
             config: {
-                baseDir: '<%= config.app %>/templates'
+              baseDir: '<%= config.app %>/templates'
             }
-        }
+          }]
+        },
+        server: {
+            files: [{
+              nonull: true,
+              expand: true,
+              dest: '<%= config.app %>',
+              cwd: '<%= config.app %>/templates',
+              src: '*.html',
+              config: {
+                  baseDir: '<%= config.app %>/templates'
+              }
+            }]
+          }
     },
 
     // Add vendor prefixed styles
@@ -414,7 +436,7 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'clean:server',
-      'nunjucks_render:files',
+      'nunjucks_render',
       'wiredep',
       'concurrent:server',
       'autoprefixer',

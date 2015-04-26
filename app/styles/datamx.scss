@@ -280,9 +280,7 @@ p {
         vertical-align: top;
         display:inline-block;
         margin: 10px 1.5px;
-       // margin-right: 1.5px;
-        //margin-top: 10px;
-
+        
         .footer-menu-head {
             font-weight: bold;
         }
@@ -311,7 +309,6 @@ p {
 
             &>img {
             width: 200px;
-            //margin-left: 60px;
             margin: 0 auto;
           }
         }
@@ -320,7 +317,6 @@ p {
     .footer-menu {
         clear: both;
         width: 100%;
-        // float: none;
         width: 100%;
         display: block !important;
         // position: absolute;
